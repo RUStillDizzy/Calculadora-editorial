@@ -11,19 +11,12 @@
 <body>
   <h1>Editor de Texto</h1>
 
-  <!-- Área do editor -->
-  <div id="editor-container" style="height: 300px;"></div>
-  <button id="save-button">Salvar Conteúdo</button>
-
-  <!-- Exibir conteúdo salvo -->
-  <div id="output"></div>
-
-  <div style="display: flex;"></div>
+  <div class="editor-layout">
     <!-- Área do editor -->
-    <div id="editor-container" style="height: 300px; width: 70%;"></div>
+    <div id="editor-container" class="editor-area"></div>
 
     <!-- Lateral para exibir informações do personagem -->
-    <div id="personagem-info" style="width: 30%; padding-left: 20px; border-left: 1px solid #ccc;">
+    <div id="personagem-info" class="personagem-lateral">
       <h2>Ficha do Personagem</h2>
       <p><strong>Nome:</strong> <span id="nome-personagem"></span></p>
       <p><strong>Idade:</strong> <span id="idade-personagem"></span></p>
@@ -33,8 +26,13 @@
     </div>
   </div>
 
-  <!-- Botão para voltar à calculadora -->
-  <a href="index.html">Voltar à Calculadora</a>
+  <button id="save-button">Salvar Conteúdo</button>
+
+  <!-- Exibir conteúdo salvo -->
+  <div id="output"></div>
+
+  <!-- Link para voltar à página do usuário -->
+  <a href="usuario.html">Voltar à Página do Usuário</a>
 
   <!-- Quill JS -->
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>

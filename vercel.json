@@ -1,0 +1,7 @@
+{
+    "routes": [
+      { "src": "/usuario", "dest": "/usuario.html" },
+      { "src": "/index", "dest": "/index.html" }
+    ]
+  }
+  

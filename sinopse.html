@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preencher Sinopse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Preencher Sinopse</h1>
+
+  <form id="sinopse-form">
+    <!-- Campo para o título do livro -->
+    <div>
+      <label for="titulo">Título do Livro:</label>
+      <input type="text" id="titulo" name="titulo" required>
+    </div>
+
+    <!-- Seleção do tipo de sinopse -->
+    <div>
+      <label for="tipo-sinopse">Tipo de Sinopse:</label>
+      <select id="tipo-sinopse" name="tipo-sinopse" required>
+        <option value="comercial">Sinopse Comercial</option>
+        <option value="submissao">Sinopse de Submissão</option>
+      </select>
+    </div>
+
+    <!-- Campo para preencher a sinopse -->
+    <div>
+      <label for="sinopse">Sinopse:</label>
+      <textarea id="sinopse" name="sinopse" rows="5" required></textarea>
+    </div>
+
+    <!-- Botão para enviar -->
+    <div>
+      <button type="submit">Enviar Sinopse</button>
+    </div>
+  </form>
+
+  <!-- Botão para voltar à página do usuário -->
+  <a href="usuario.html">
+    <button>Voltar para Página do Usuário</button>
+  </a>
+
+  <script src="sinopse.js"></script> <!-- Arquivo JS para salvar a sinopse -->
+</body>
+</html>

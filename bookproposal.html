@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo de Book Proposal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Preencher Modelo de Book Proposal</h1>
+
+  <form id="book-proposal-form">
+    <div>
+      <label for="titulo">Título do Livro:</label>
+      <input type="text" id="titulo" name="titulo" required>
+    </div>
+
+    <div>
+      <label for="autor">Nome do Autor:</label>
+      <input type="text" id="autor" name="autor" required>
+    </div>
+
+    <div>
+      <label for="resumo">Resumo do Livro:</label>
+      <textarea id="resumo" name="resumo" rows="5" required></textarea>
+    </div>
+
+    <div>
+      <label for="publico-alvo">Público-Alvo:</label>
+      <input type="text" id="publico-alvo" name="publico-alvo" required>
+    </div>
+
+    <div>
+      <label for="comercializacao">Estratégia de Comercialização:</label>
+      <textarea id="comercializacao" name="comercializacao" rows="5" required></textarea>
+    </div>
+
+    <div>
+      <button type="submit">Enviar Book Proposal</button>
+    </div>
+  </form>
+
+  <!-- Botão para voltar à página do usuário -->
+  <a href="usuario.html">
+    <button>Voltar para Página do Usuário</button>
+  </a>
+
+  <script src="book-proposal.js"></script> <!-- JS para salvar o formulário -->
+</body>
+</html>

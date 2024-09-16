@@ -177,3 +177,56 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+/* Menus laterais editor de texto */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.editor-area {
+  height: 300px;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+.info-lateral {
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  width: 250px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kanban-coluna {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-right: 15px;
+}
+
+.kanban-card {
+  background-color: #cce5ff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

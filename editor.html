@@ -7,22 +7,40 @@
   
   <!-- Quill CSS -->
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Editor de Texto</h1>
 
-  <div class="editor-layout">
-    <!-- Área do editor -->
-    <div id="editor-container" class="editor-area"></div>
+  <!-- Ferramentas do Editor -->
+  <div id="toolbar-container">
+    <button class="ql-bold"></button>
+    <button class="ql-italic"></button>
+    <button class="ql-underline"></button>
+    <button class="ql-strike"></button>
+    <button class="ql-blockquote"></button>
+    <button class="ql-list" value="ordered"></button>
+    <button class="ql-list" value="bullet"></button>
+    <button class="ql-link"></button>
+    <button class="ql-image"></button>
+    <button class="ql-video"></button>
+  </div>
 
-    <!-- Lateral para exibir informações do personagem -->
-    <div id="personagem-info" class="personagem-lateral">
-      <h2>Ficha do Personagem</h2>
-      <p><strong>Nome:</strong> <span id="nome-personagem"></span></p>
-      <p><strong>Idade:</strong> <span id="idade-personagem"></span></p>
-      <p><strong>Personalidade:</strong> <span id="personalidade-personagem"></span></p>
-      <p><strong>História:</strong> <span id="historia-personagem"></span></p>
-      <a href="personagem.html">Editar Personagem</a>
+  <!-- Área do Editor -->
+  <div id="editor-container" class="editor-area"></div>
+
+  <!-- Lateral para exibir a Ficha de Personagem e Escaleta -->
+  <div id="info-lateral" class="info-lateral">
+    <h2>Ficha de Personagem</h2>
+    <p><strong>Nome:</strong> <span id="nome-personagem"></span></p>
+    <p><strong>Idade:</strong> <span id="idade-personagem"></span></p>
+    <p><strong>Personalidade:</strong> <span id="personalidade-personagem"></span></p>
+    <p><strong>História:</strong> <span id="historia-personagem"></span></p>
+    <a href="personagem.html">Editar Personagem</a>
+
+    <h2>Escaleta</h2>
+    <div id="escaleta-info">
+      <!-- Escaleta será exibida aqui -->
     </div>
   </div>
 
@@ -31,10 +49,6 @@
   <!-- Exibir conteúdo salvo -->
   <div id="output"></div>
 
-  <!-- Link para voltar à página do usuário -->
-  <a href="usuario.html">Voltar à Página do Usuário</a>
-
-  <!-- Quill JS -->
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
   <script src="editor.js"></script> <!-- Seu arquivo JS para o editor -->
 </body>

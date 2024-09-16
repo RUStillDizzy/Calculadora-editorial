@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Painel Administrativo</h1>
+
+  <div>
+    <h2>Usuários Cadastrados</h2>
+    <table id="tabela-usuarios">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Os usuários cadastrados serão listados aqui -->
+      </tbody>
+    </table>
+
+    <button onclick="exportarParaCSV()">Exportar Dados para CSV</button>
+  </div>
+
+  <script src="admin-dashboard.js"></script>
+</body>
+</html>

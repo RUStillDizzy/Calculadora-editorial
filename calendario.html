@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Calendário</h1>
+
+  <div id="calendario-container">
+    <!-- O calendário será inserido aqui -->
+    <div id="calendario"></div>
+  </div>
+
+  <!-- Modal para adicionar eventos -->
+  <div id="modal-evento" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h2>Adicionar Evento</h2>
+      <form id="evento-form">
+        <label for="titulo">Título do Evento:</label>
+        <input type="text" id="titulo" name="titulo" required>
+        
+        <label for="data">Data do Evento:</label>
+        <input type="date" id="data" name="data" required>
+
+        <label for="descricao">Descrição do Evento:</label>
+        <textarea id="descricao" name="descricao"></textarea>
+
+        <button type="submit">Adicionar Evento</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Botão para voltar à página do usuário -->
+  <a href="usuario.html">
+    <button>Voltar para Página do Usuário</button>
+  </a>
+
+  <script src="calendario.js"></script> <!-- Arquivo JS para interatividade -->
+</body>
+</html>

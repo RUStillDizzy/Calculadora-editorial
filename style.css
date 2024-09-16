@@ -7,7 +7,7 @@ body {
     background-color: #c19643;
 }
 
-/* Menu flutuante */
+/* Pagina de escaleta */
 .menu-flutuante {
     position: fixed;
     top: 20px;
@@ -65,3 +65,76 @@ body {
     background-color: #0056b3;
   }
   
+
+  /* Página de calendário */
+
+  /* Calendário */
+#calendario {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.dias-semana {
+  display: contents;
+}
+
+.dia {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dia.vazio {
+  background-color: transparent;
+  cursor: default;
+}
+
+.evento {
+  background-color: #007bff;
+  color: white;
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  width: 50%;
+}
+
+.fechar {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+  color: red;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecionar Estrutura Narrativa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Selecionar Estrutura Narrativa</h1>
+
+  <!-- Menu flutuante para seleção da estrutura narrativa -->
+  <div id="menu-flutuante" class="menu-flutuante">
+    <label for="estrutura-narrativa">Escolha a Estrutura Narrativa:</label>
+    <select id="estrutura-narrativa">
+      <option value="">Selecione uma estrutura</option>
+      <option value="piramide-freytag">Pirâmide de Freytag</option>
+      <option value="kishotenketsu">Kishotenketsu</option>
+      <option value="estrutura-hiperlink">Estrutura Hiperlink</option>
+      <option value="narrativa-quadro">Narrativa de Quadro</option>
+      <option value="in-media-res">In Media Res</option>
+      <option value="jornada-heroi">Jornada do Herói</option>
+      <option value="tres-atos">Estrutura de 3 Atos</option>
+      <option value="circulo-historias">Círculo de Histórias</option>
+      <option value="save-the-cat">Save The Cat</option>
+      <option value="sete-pontos">Estrutura de 7 Pontos</option>
+      <option value="espinha-historia">Espinha da História</option>
+    </select>
+
+    <button id="confirmar-estrutura">Confirmar Estrutura</button>
+  </div>
+
+  <!-- Área do kanban para a escaleta -->
+  <div id="kanban-escaleta" class="kanban-escaleta">
+    <!-- Colunas e cards dinâmicos baseados na estrutura narrativa -->
+  </div>
+
+  <a href="usuario.html">
+    <button>Voltar para Página do Usuário</button>
+  </a>
+
+  <script src="escaleta.js"></script> <!-- Arquivo JS para gerar o kanban -->
+</body>
+</html>

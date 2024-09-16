@@ -9,15 +9,33 @@
 <body>
   <h1>Pagamento de Assinatura</h1>
 
-  <p>Assine por apenas <strong>R$ 10,00</strong> até o dia X.</p>
+  <p>Assine por apenas <strong>R$ 10,00</strong> por mês.</p>
+  <p>Você tem <strong>30 dias gratuitos</strong>. Após esse período, você deve pagar para continuar acessando a plataforma.</p>
 
-  <!-- Botão de pagamento -->
-  <button id="pagar-assinatura">Pagar Assinatura</button>
+  <form id="pagamento-form">
+    <div>
+      <label for="metodo-pagamento">Escolha o Método de Pagamento:</label>
+      <select id="metodo-pagamento" required>
+        <option value="cartao">Cartão de Crédito</option>
+        <option value="boleto">Boleto Bancário</option>
+        <option value="paypal">PayPal</option>
+      </select>
+    </div>
 
-  <!-- Botão para voltar à página principal -->
-  <a href="index.html">
-    <button>Voltar para a Calculadora</button>
-  </a>
+    <!-- Dados do Cartão de Crédito (aparecem apenas se "cartão" for selecionado) -->
+    <div id="dados-cartao" style="display: none;">
+      <label for="numero-cartao">Número do Cartão:</label>
+      <input type="text" id="numero-cartao" required>
+
+      <label for="validade-cartao">Validade:</label>
+      <input type="text" id="validade-cartao" placeholder="MM/AA" required>
+
+      <label for="cvv-cartao">CVV:</label>
+      <input type="text" id="cvv-cartao" required>
+    </div>
+
+    <button type="submit">Confirmar Pagamento</button>
+  </form>
 
   <script src="assinatura.js"></script> <!-- Script para manipular o pagamento -->
 </body>

@@ -7,6 +7,11 @@
   
   <!-- Quill CSS -->
   <script src="https://cdn.tiny.cloud/1/lwipzzt2z03av9eyx18lout837rirc6x8z972q53wfcqgi0a/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
   <script>
     tinymce.init({
       selector: 'textarea',
@@ -27,9 +32,7 @@
       ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
     });
   </script>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+
   <h1>Editor de Texto</h1>
 
   <!-- Ferramentas do Editor -->

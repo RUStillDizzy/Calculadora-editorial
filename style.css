@@ -49,18 +49,6 @@ body {
     cursor: pointer;
   }
   
-  button {
-    margin-top: 10px;
-    padding: 8px 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
   
 
   /* Página de calendário */
@@ -125,17 +113,6 @@ body {
   color: red;
 }
 
-button {
-  padding: 8px 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056
-
 
 /* Página de cadasto e assinatura*/
 
@@ -163,17 +140,6 @@ input {
   box-sizing: border-box;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
 
 /* Menus laterais editor de texto */
 
@@ -215,15 +181,4 @@ body {
   border-radius: 4px;
 }
 
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  margin-top: 10px;
-}
 
-button:hover {
-  background-color: #0056b3;
-}

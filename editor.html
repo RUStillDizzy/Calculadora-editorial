@@ -7,6 +7,15 @@
   
   <!-- Quill CSS -->
   <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    tinymce.init({
+      selector: '#editor-tinymce', // Seleciona a textarea para transformar no editor
+      plugins: 'link image code table lists', // Adiciona funcionalidades como links, imagens e tabelas
+      toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | link image table code', // Barra de ferramentas
+      height: 300, // Altura do editor
+      content_css: false, // Desativa o uso de folhas de estilo do TinyMCE (use o seu próprio)
+    });
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>

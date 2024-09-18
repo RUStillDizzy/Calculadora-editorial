@@ -4,6 +4,10 @@ body {
     background-color: #c19643;
 }
 
+body, html {
+  background-color: #c19643;
+}
+
 /* Pagina de escaleta */
 .menu-flutuante {
     position: fixed;

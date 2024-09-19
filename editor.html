@@ -21,6 +21,12 @@
 
   <h1>Editor de Texto</h1>
 
+  <!-- Menu lateral fixo -->
+  <div id="sidebar">
+    <button id="toggle-personagem">Ficha de Personagem</button>
+    <button id="toggle-escaleta">Escaleta</button>
+  </div>
+
   <!-- Ferramentas do Editor -->
   <div id="toolbar">
     <!-- Cabeçalhos -->
@@ -78,10 +84,6 @@
   <!-- Lateral para exibir a Ficha de Personagem e Escaleta -->
   <div id="modal-personagem" class="modal hidden">
     <h2>Ficha de Personagem</h2>
-    <p><strong>Nome:</strong> <span id="nome-personagem"></span></p>
-    <p><strong>Idade:</strong> <span id="idade-personagem"></span></p>
-    <p><strong>Personalidade:</strong> <span id="personalidade-personagem"></span></p>
-    <p><strong>História:</strong> <span id="historia-personagem"></span></p>
     <button id="edit-personagem">Editar Personagem</button>
   </div>
 
@@ -91,8 +93,6 @@
       <!-- Escaleta será exibida aqui -->
     </div>
     <button id="edit-escaleta">Editar Escaleta</button>
-  </div>
-  
   </div>
 
   <button id="save-button">Salvar Conteúdo</button>

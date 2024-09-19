@@ -6,6 +6,42 @@ var quill = new Quill('#editor-container', {
   theme: 'snow'  // Usa o tema "snow" do Quill
 });
 
+// Função para adicionar funcionalidade de arrastar à régua
+function makeDraggable(tabId, property) {
+  var tab = document.getElementById(tabId);
+  var dragging = false;
+
+  tab.addEventListener('mousedown', function(e) {
+    dragging = true;
+    document.body.style.cursor = 'grabbing';
+  });
+
+  document.addEventListener('mouseup', function(e) {
+    dragging = false;
+    document.body.style.cursor = 'default';
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    if (dragging) {
+      var position = e.clientX - tab.offsetWidth / 2;
+      if (position < 0) position = 0;
+      if (position > document.getElementById('ruler').offsetWidth - tab.offsetWidth) {
+        position = document.getElementById('ruler').offsetWidth - tab.offsetWidth;
+      }
+      tab.style.left = position + 'px';
+
+      // Ajuste da margem no editor
+      var editor = document.getElementById('editor-container').firstChild;
+      editor.style[property] = position + 'px';
+    }
+  });
+}
+
+// Aplicar funcionalidade de arrastar aos marcadores
+makeDraggable('left-tab', 'marginLeft');
+makeDraggable('right-tab', 'marginRight');
+
+
 // Contador de Palavras
 quill.on('text-change', function() {
   var text = quill.getText().trim();
@@ -60,3 +96,38 @@ document.getElementById('edit-personagem').addEventListener('click', function() 
 document.getElementById('edit-escaleta').addEventListener('click', function() {
   alert('Função para editar escaleta ainda não implementada.');
 });
+
+// Função para gerar a lista de capítulos
+function generateChapterList() {
+  var editor = document.querySelector('#editor-container .ql-editor');
+  var chapterList = document.getElementById('chapter-items');
+  chapterList.innerHTML = '';  // Limpa a lista de capítulos anterior
+
+  var headers = editor.querySelectorAll('h1, h2, h3');  // Seleciona todos os cabeçalhos
+
+  headers.forEach(function(header, index) {
+    var chapterItem = document.createElement('li');
+    chapterItem.textContent = header.textContent;
+    chapterItem.setAttribute('data-index', index);
+    chapterList.appendChild(chapterItem);
+
+    // Função para rolar até o cabeçalho quando clicado
+    chapterItem.addEventListener('click', function() {
+      header.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+}
+
+// Monitora mudanças no editor e atualiza a lista de capítulos
+quill.on('text-change', function() {
+  generateChapterList();
+});
+
+window.onload = function() {
+  var savedContent = localStorage.getItem('savedContent');
+  if (savedContent) {
+    quill.root.innerHTML = savedContent;
+  }
+  generateChapterList();  // Gera a lista de capítulos após o conteúdo ser carregado
+};
+

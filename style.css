@@ -126,3 +126,66 @@ a button:hover {
   border: 1px solid #ccc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilos para a régua */
+#ruler {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  background: #e0e0e0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+#ruler div {
+  width: 10px;
+  height: 30px;
+  background: #007bff;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+
+#left-tab {
+  left: 0;
+}
+
+#center-tab {
+  left: 50%;
+}
+
+#right-tab {
+  right: 0;
+}
+
+/* Estilos para a barra lateral de capítulos */
+.chapter-sidebar {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 90%;
+}
+
+.chapter-sidebar h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.chapter-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.chapter-sidebar li {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.chapter-sidebar li:hover {
+  text-decoration: underline;
+}

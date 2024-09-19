@@ -4,16 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editor de Texto</title>
-  
-  <!-- Quill CSS -->
-  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <script>
-      var quill = new Quill('#editor-container', {
-          theme: 'snow'
-      });
-  </script>
-  
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -135,6 +125,15 @@
   <!-- Exibir conteúdo salvo -->
   <div id="output"></div>
 
+
+    <!-- Quill CSS -->
+    <link href="https://cdn.quilljs.com/2.0.2/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/2.0.2/quill.js"></script>
+    <script>
+        var quill = new Quill('#editor-container', {
+            theme: 'snow'
+        });
+    </script>
   <script src="editor.js"></script> <!-- Seu arquivo JS para o editor -->
 
 </body>

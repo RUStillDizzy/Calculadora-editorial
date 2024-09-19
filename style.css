@@ -135,7 +135,10 @@ a button:hover {
   background: #e0e0e0;
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between; /* Ajusta os tabs para aparecerem corretamente */
 }
+
 
 #ruler div {
   width: 10px;
@@ -147,14 +150,17 @@ a button:hover {
 }
 
 #left-tab {
+  position: relative;
   left: 0;
 }
 
 #center-tab {
+  position: relative;
   left: 50%;
 }
 
 #right-tab {
+  position: relative;
   right: 0;
 }
 

@@ -37,6 +37,23 @@ function makeDraggable(tabId, property) {
   });
 }
 
+// Adicionando módulos personalizados para espaçamento de linha e letras
+var Parchment = Quill.import('parchment');
+var lineHeightConfig = {
+  scope: Parchment.Scope.BLOCK,
+  whitelist: ['1.0', '1.5', '2.0', '2.5', '3.0']
+};
+var lineHeightStyle = new Parchment.Attributor.Style('line-height', 'line-height', lineHeightConfig);
+Quill.register(lineHeightStyle, true);
+
+var letterSpacingConfig = {
+  scope: Parchment.Scope.INLINE,
+  whitelist: ['normal', '0.1em', '0.2em', '0.3em', '0.4em']
+};
+var letterSpacingStyle = new Parchment.Attributor.Style('letter-spacing', 'letter-spacing', letterSpacingConfig);
+Quill.register(letterSpacingStyle, true);
+
+
 // Aplicar funcionalidade de arrastar aos marcadores
 makeDraggable('left-tab', 'marginLeft');
 makeDraggable('right-tab', 'marginRight');

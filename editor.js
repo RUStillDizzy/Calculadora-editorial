@@ -13,6 +13,15 @@ quill.on('text-change', function() {
   document.getElementById('word-count').innerText = wordCount + ' palavras';
 });
 
+// Função para adicionar comentário
+document.getElementById('add-comment').addEventListener('click', function() {
+  var comment = prompt("Adicione seu comentário:");
+  if (comment) {
+    quill.format('background', '#ffeb3b');  // Destaque o texto comentado
+    quill.insertText(quill.getSelection(), ' [' + comment + '] ', 'italic', true);  // Adicione o comentário
+  }
+});
+
 // Exportar para PDF
 document.getElementById('export-pdf').addEventListener('click', function() {
   var doc = new jsPDF();
@@ -29,6 +38,21 @@ document.getElementById('save-button').addEventListener('click', function() {
   localStorage.setItem('conteudoEditor', editorContent);
 });
 
+// Função para alternar a exibição da ficha de personagem
+document.getElementById('toggle-personagem').addEventListener('click', function() {
+  var modal = document.getElementById('modal-personagem');
+  modal.classList.toggle('hidden');
+  carregarFichaPersonagem();
+});
+
+// Função para alternar a exibição da escaleta
+document.getElementById('toggle-escaleta').addEventListener('click', function() {
+  var modal = document.getElementById('modal-escaleta');
+  modal.classList.toggle('hidden');
+  carregarEscaleta();
+});
+
+
 // Carregar a ficha de personagem
 function carregarFichaPersonagem() {
   const personagem = JSON.parse(localStorage.getItem('personagem'));
@@ -39,7 +63,7 @@ function carregarFichaPersonagem() {
     document.getElementById('personalidade-personagem').textContent = personagem.personalidade;
     document.getElementById('historia-personagem').textContent = personagem.historia;
   } else {
-    document.getElementById('info-lateral').innerHTML += '<p>Nenhum personagem salvo.</p>';
+    document.getElementById('modal-personagem').innerHTML += '<p>Nenhum personagem salvo.</p>';
   }
 }
 
@@ -49,6 +73,7 @@ function carregarEscaleta() {
 
   if (escaleta) {
     const escaletaInfo = document.getElementById('escaleta-info');
+    escaletaInfo.innerHTML = ''; // Limpar conteúdo existente
     escaleta.forEach(passo => {
       const passoDiv = document.createElement('div');
       passoDiv.innerHTML = `<strong>${passo.titulo}:</strong> ${passo.descricao}`;

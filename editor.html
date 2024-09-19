@@ -36,8 +36,21 @@
     <button class="ql-underline"></button>
     
     <!-- Tamanho e Tipo de Fonte -->
-    <select class="ql-font"></select>
-    <select class="ql-size"></select>
+    <select class="ql-font">
+        <option value="sans-serif">Sans-Serif</option>
+        <option value="serif">Serif</option>
+        <option value="monospace">Monospace</option>
+        <option value="comic-sans">Comic Sans</option>
+        <option value="courier">Courier</option>
+        <option value="arial">Arial</option>
+      </select>
+
+    <select class="ql-size">
+      <option value="small"></option>
+      <option value="normal" selected></option>
+      <option value="large"></option>
+      <option value="huge"></option>
+    </select>
     
     <!-- Alinhamento -->
     <select class="ql-align"></select>
@@ -53,6 +66,8 @@
     <!-- Cores -->
     <select class="ql-color"></select>
     <select class="ql-background"></select>
+
+    <button id="add-comment" class="ql-comment">Comentário</button>
  </div>
  <div id="word-count">0 palavras</div>
   
@@ -61,18 +76,23 @@
   <div id="editor-container" class="editor-area"></div>
 
   <!-- Lateral para exibir a Ficha de Personagem e Escaleta -->
-  <div id="info-lateral" class="info-lateral">
+  <div id="modal-personagem" class="modal hidden">
     <h2>Ficha de Personagem</h2>
     <p><strong>Nome:</strong> <span id="nome-personagem"></span></p>
     <p><strong>Idade:</strong> <span id="idade-personagem"></span></p>
     <p><strong>Personalidade:</strong> <span id="personalidade-personagem"></span></p>
     <p><strong>História:</strong> <span id="historia-personagem"></span></p>
-    <a href="personagem.html">Editar Personagem</a>
+    <button id="edit-personagem">Editar Personagem</button>
+  </div>
 
+  <div id="modal-escaleta" class="modal hidden">
     <h2>Escaleta</h2>
     <div id="escaleta-info">
       <!-- Escaleta será exibida aqui -->
     </div>
+    <button id="edit-escaleta">Editar Escaleta</button>
+  </div>
+  
   </div>
 
   <button id="save-button">Salvar Conteúdo</button>

@@ -1,6 +1,28 @@
+// Inicializando o Quill com as opções de toolbar e funcionalidades
+var quill = new Quill('#editor-container', {
+  modules: {
+    toolbar: '#toolbar'  // Conecta a toolbar ao editor
+  },
+  theme: 'snow'  // Usa o tema "snow" do Quill
+});
+
+// Contador de Palavras
+quill.on('text-change', function() {
+  var text = quill.getText().trim();
+  var wordCount = text.length ? text.split(/\s+/).length : 0;
+  document.getElementById('word-count').innerText = wordCount + ' palavras';
+});
+
+// Exportar para PDF
+document.getElementById('export-pdf').addEventListener('click', function() {
+  var doc = new jsPDF();
+  doc.text(quill.root.innerText, 10, 10);
+  doc.save('document.pdf');
+});
+
 // Salvando o conteúdo quando o botão for clicado
 document.getElementById('save-button').addEventListener('click', function() {
-  var editorContent = tinymce.get('editor-tinymce').getContent();
+  var editorContent = quill.root.innerHTML;
   document.getElementById('output').innerHTML = "<h3>Conteúdo Salvo:</h3>" + editorContent;
 
   // Salvando o conteúdo no localStorage

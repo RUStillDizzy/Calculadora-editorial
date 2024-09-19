@@ -8,7 +8,6 @@
   <!-- Quill CSS -->
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <div id="editor-container"></div>
   <script>
       var quill = new Quill('#editor-container', {
           theme: 'snow'
@@ -23,18 +22,40 @@
   <h1>Editor de Texto</h1>
 
   <!-- Ferramentas do Editor -->
-  <div id="toolbar-container">
+  <div id="toolbar">
+    <!-- Cabeçalhos -->
+    <select class="ql-header">
+      <option value="1"></option>
+      <option value="2"></option>
+      <option selected></option>
+    </select>
+    
+    <!-- Negrito, Itálico e Sublinhado -->
     <button class="ql-bold"></button>
     <button class="ql-italic"></button>
     <button class="ql-underline"></button>
-    <button class="ql-strike"></button>
-    <button class="ql-blockquote"></button>
+    
+    <!-- Tamanho e Tipo de Fonte -->
+    <select class="ql-font"></select>
+    <select class="ql-size"></select>
+    
+    <!-- Alinhamento -->
+    <select class="ql-align"></select>
+    
+    <!-- Listas -->
     <button class="ql-list" value="ordered"></button>
     <button class="ql-list" value="bullet"></button>
-    <button class="ql-link"></button>
-    <button class="ql-image"></button>
-    <button class="ql-video"></button>
-  </div>
+    
+    <!-- Indentação -->
+    <button class="ql-indent" value="-1"></button>
+    <button class="ql-indent" value="+1"></button>
+    
+    <!-- Cores -->
+    <select class="ql-color"></select>
+    <select class="ql-background"></select>
+ </div>
+ <div id="word-count">0 palavras</div>
+  
 
   <!-- Área do Editor -->
   <div id="editor-container" class="editor-area"></div>
@@ -63,12 +84,7 @@
   <!-- Exibir conteúdo salvo -->
   <div id="output"></div>
 
-
-
-
-  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
   <script src="editor.js"></script> <!-- Seu arquivo JS para o editor -->
-  <!-- TinyMCE -->
 
 </body>
 </html>

@@ -53,6 +53,14 @@ var letterSpacingConfig = {
 var letterSpacingStyle = new Parchment.Attributor.Style('letter-spacing', 'letter-spacing', letterSpacingConfig);
 Quill.register(letterSpacingStyle, true);
 
+// Registrar o espaçamento de linha
+var lineHeightStyle = new Quill.import('attributors/style/line-height');
+Quill.register(lineHeightStyle, true);
+
+// Registrar o espaçamento de letras
+var letterSpacingStyle = new Quill.import('attributors/style/letter-spacing');
+Quill.register(letterSpacingStyle, true);
+
 
 // Aplicar funcionalidade de arrastar aos marcadores
 makeDraggable('left-tab', 'marginLeft');

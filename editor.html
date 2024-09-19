@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editor de Texto</title>
-
+  
+  <!-- Quill CSS -->
+  <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,60 +19,59 @@
     <button id="toggle-escaleta">Escaleta</button>
   </div>
 
-<!-- Régua de margens e indentação -->
-<div id="ruler">
-  <div id="left-tab"></div>
-  <div id="right-tab"></div>
-  <div id="center-tab"></div>
-</div>
+  <!-- Régua de margens e indentação -->
+  <div id="ruler">
+    <div id="left-tab"></div>
+    <div id="right-tab"></div>
+    <div id="center-tab"></div>
+  </div>
 
-<div id="chapter-list" class="chapter-sidebar">
-  <h3>Capítulos</h3>
-  <ul id="chapter-items"></ul>
-</div>
-
+  <!-- Barra lateral de capítulos -->
+  <div id="chapter-list" class="chapter-sidebar">
+    <h3>Capítulos</h3>
+    <ul id="chapter-items"></ul>
+  </div>
 
   <!-- Ferramentas do Editor -->
   <div id="toolbar">
-    <!-- Cabeçalhos -->
+    <!-- Espaçamento de linha -->
+    <select class="ql-line-height">
+      <option value="1.0">1.0</option>
+      <option value="1.5">1.5</option>
+      <option value="2.0">2.0</option>
+      <option value="2.5">2.5</option>
+      <option value="3.0">3.0</option>
+    </select>
+
+    <!-- Espaçamento de letras -->
+    <select class="ql-letter-spacing">
+      <option value="normal">Normal</option>
+      <option value="0.1em">0.1em</option>
+      <option value="0.2em">0.2em</option>
+      <option value="0.3em">0.3em</option>
+      <option value="0.4em">0.4em</option>
+    </select>
+
+    <!-- Cabeçalhos, Negrito, Itálico, Sublinhado -->
     <select class="ql-header">
       <option value="1"></option>
       <option value="2"></option>
       <option selected></option>
     </select>
 
-    <!-- Espaçamento de linha -->
-  <select class="ql-line-height">
-    <option value="1.0">1.0</option>
-    <option value="1.5">1.5</option>
-    <option value="2.0">2.0</option>
-    <option value="2.5">2.5</option>
-    <option value="3.0">3.0</option>
-  </select>
-
-  <!-- Espaçamento entre letras -->
-  <select class="ql-letter-spacing">
-    <option value="normal">Normal</option>
-    <option value="0.1em">0.1em</option>
-    <option value="0.2em">0.2em</option>
-    <option value="0.3em">0.3em</option>
-    <option value="0.4em">0.4em</option>
-  </select>
-    
-    <!-- Negrito, Itálico e Sublinhado -->
     <button class="ql-bold"></button>
     <button class="ql-italic"></button>
     <button class="ql-underline"></button>
     
     <!-- Tamanho e Tipo de Fonte -->
     <select class="ql-font">
-        <option value="sans-serif">Sans-Serif</option>
-        <option value="serif">Serif</option>
-        <option value="monospace">Monospace</option>
-        <option value="comic-sans">Comic Sans</option>
-        <option value="courier">Courier</option>
-        <option value="arial">Arial</option>
-      </select>
+      <option value="sans-serif">Sans-Serif</option>
+      <option value="serif">Serif</option>
+      <option value="monospace">Monospace</option>
+      <option value="comic-sans">Comic Sans</option>
+      <option value="courier">Courier</option>
+      <option value="arial">Arial</option>
+    </select>
 
     <select class="ql-size">
       <option value="small"></option>
@@ -78,63 +79,33 @@
       <option value="large"></option>
       <option value="huge"></option>
     </select>
-    
-    <!-- Alinhamento -->
+
+    <!-- Alinhamento, Cores, etc. -->
     <select class="ql-align"></select>
-    
-    <!-- Listas -->
     <button class="ql-list" value="ordered"></button>
     <button class="ql-list" value="bullet"></button>
-    
-    <!-- Indentação -->
     <button class="ql-indent" value="-1"></button>
     <button class="ql-indent" value="+1"></button>
-    
-    <!-- Cores -->
+
     <select class="ql-color"></select>
     <select class="ql-background"></select>
-
-    <button id="add-comment" class="ql-comment">Comentário</button>
- </div>
- <div id="word-count">0 palavras</div>
-  
+  </div>
 
   <!-- Área do Editor -->
   <div id="editor-container" class="editor-area" spellcheck="true"></div>
 
-  <!-- Lateral para exibir a Ficha de Personagem e Escaleta -->
-  <div id="modal-personagem" class="modal hidden">
-    <h2>Ficha de Personagem</h2>
-    <button id="edit-personagem">Editar Personagem</button>
-  </div>
-
-  <div id="modal-escaleta" class="modal hidden">
-    <h2>Escaleta</h2>
-    <div id="escaleta-info">
-      <!-- Escaleta será exibida aqui -->
-    </div>
-    <button id="edit-escaleta">Editar Escaleta</button>
-  </div>
-
-  <button id="save-button">Salvar Conteúdo</button>
-    <!-- Botão para voltar à página do usuário -->
-<a href="usuario.html">
-  <button>Voltar para Página do Usuário</button>
-</a>
-
-  <!-- Exibir conteúdo salvo -->
   <div id="output"></div>
 
-
-    <!-- Quill CSS -->
-    <link href="https://cdn.quilljs.com/2.0.2/quill.snow.css" rel="stylesheet">
-    <script src="https://cdn.quilljs.com/2.0.2/quill.js"></script>
-    <script>
-        var quill = new Quill('#editor-container', {
-            theme: 'snow'
-        });
-    </script>
+  <!-- Coloque o script no final para garantir a inicialização correta -->
   <script src="editor.js"></script> <!-- Seu arquivo JS para o editor -->
-
+  <script>
+    // Inicializando o Quill após o carregamento do DOM
+    var quill = new Quill('#editor-container', {
+      theme: 'snow',
+      modules: {
+        toolbar: '#toolbar'  // Conecta a toolbar ao editor
+      }
+    });
+  </script>
 </body>
 </html>

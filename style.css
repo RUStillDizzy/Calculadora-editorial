@@ -23,6 +23,7 @@ h1 {
   background-color: #fff;
   border: 1px solid #ccc;
   padding: 10px;
+  z-index: 10;
 }
 
 #editor-container {
@@ -125,7 +126,7 @@ a button:hover {
   padding: 15px;
   border: 1px solid #ccc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 2000; /* Garante que sobreponha o conteúdo */
+  z-index: 1000; /* Garante que sobreponha o conteúdo */
 }
 
 /* Estilos para a régua */
@@ -181,7 +182,7 @@ a button:hover {
   padding: 10px;
   overflow-y: auto;
   max-height: 90%;
-  z-index: 1000; /* Garante que o sidebar não sobreponha botões essenciais */
+  z-index: 999; /* Garante que o sidebar não sobreponha botões essenciais */
 }
 
 .chapter-sidebar h3 {

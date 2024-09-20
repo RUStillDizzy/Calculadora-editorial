@@ -125,6 +125,7 @@ a button:hover {
   padding: 15px;
   border: 1px solid #ccc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2000; /* Garante que sobreponha o conteúdo */
 }
 
 /* Estilos para a régua */
@@ -136,7 +137,15 @@ a button:hover {
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
   display: flex;
+  justify-content: space-between; /* Distribui os tabs */
   align-items: center;  /* Ajuste para centralizar os tabs */
+}
+
+#left-tab, #center-tab, #right-tab {
+  width: 10px;
+  height: 30px;
+  background: #007bff;
+  cursor: pointer;
 }
 
 #ruler div {
@@ -164,7 +173,7 @@ a button:hover {
 /* Estilos para a barra lateral de capítulos */
 .chapter-sidebar {
   position: fixed;
-  top: 100px;
+  top: 150px;
   left: 0;
   width: 200px;
   background-color: #f1f1f1;
@@ -172,6 +181,7 @@ a button:hover {
   padding: 10px;
   overflow-y: auto;
   max-height: 90%;
+  z-index: 1000; /* Garante que o sidebar não sobreponha botões essenciais */
 }
 
 .chapter-sidebar h3 {

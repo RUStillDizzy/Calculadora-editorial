@@ -53,19 +53,9 @@ var letterSpacingConfig = {
 var letterSpacingStyle = new Parchment.Attributor.Style('letter-spacing', 'letter-spacing', letterSpacingConfig);
 Quill.register(letterSpacingStyle, true);
 
-// Registrar o espaçamento de linha
-var lineHeightStyle = new Quill.import('attributors/style/line-height');
-Quill.register(lineHeightStyle, true);
-
-// Registrar o espaçamento de letras
-var letterSpacingStyle = new Quill.import('attributors/style/letter-spacing');
-Quill.register(letterSpacingStyle, true);
-
-
 // Aplicar funcionalidade de arrastar aos marcadores
 makeDraggable('left-tab', 'marginLeft');
 makeDraggable('right-tab', 'marginRight');
-
 
 // Contador de Palavras
 quill.on('text-change', function() {
@@ -113,15 +103,6 @@ document.getElementById('toggle-escaleta').addEventListener('click', function() 
   modalEscaleta.classList.toggle('hidden');
 });
 
-// Funções para editar ficha de personagem e escaleta (você pode expandir conforme necessário)
-document.getElementById('edit-personagem').addEventListener('click', function() {
-  alert('Função para editar ficha de personagem ainda não implementada.');
-});
-
-document.getElementById('edit-escaleta').addEventListener('click', function() {
-  alert('Função para editar escaleta ainda não implementada.');
-});
-
 // Função para gerar a lista de capítulos
 function generateChapterList() {
   var editor = document.querySelector('#editor-container .ql-editor');
@@ -148,11 +129,11 @@ quill.on('text-change', function() {
   generateChapterList();
 });
 
+// Gera a lista de capítulos ao carregar o conteúdo salvo
 window.onload = function() {
   var savedContent = localStorage.getItem('savedContent');
   if (savedContent) {
     quill.root.innerHTML = savedContent;
   }
-  generateChapterList();  // Gera a lista de capítulos após o conteúdo ser carregado
+  generateChapterList();
 };
-

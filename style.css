@@ -136,33 +136,30 @@ a button:hover {
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
   display: flex;
-  justify-content: space-between; /* Ajusta os tabs para aparecerem corretamente */
+  align-items: center;  /* Ajuste para centralizar os tabs */
 }
-
 
 #ruler div {
   width: 10px;
   height: 30px;
   background: #007bff;
-  position: absolute;
-  top: 0;
+  position: relative;
   cursor: pointer;
 }
 
 #left-tab {
-  position: relative;
   left: 0;
 }
 
 #center-tab {
-  position: relative;
   left: 50%;
 }
 
 #right-tab {
-  position: relative;
   right: 0;
+  position: absolute; /* Corrigido para alinhar corretamente à direita */
 }
+
 
 /* Estilos para a barra lateral de capítulos */
 .chapter-sidebar {

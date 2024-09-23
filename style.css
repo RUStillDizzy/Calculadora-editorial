@@ -11,6 +11,83 @@ body, html {
   height: 100%;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  color: #000000;
+}
+
+#cabecalho: {
+  height: 50px;
+  width: 50%;
+}
+
+img:{
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  background-color: #ffffff;
+  border: 1px solid #c19643;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  color: #c19643;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #c19643;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #c19643;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #b58439;
+}
+
+#resultado {
+  font-size: 18px;
+  font-weight: bold;
+  color: #c19643;
+}
+
 /* Estilos do editor de texto */
 h1 {
   text-align: center;

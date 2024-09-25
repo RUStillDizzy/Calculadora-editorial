@@ -14,7 +14,24 @@
 <body>
   <header class="cabecalho">
     <img src="./logotipo_HERODOTOS-removebg-preview.png" alt="logotipo" class="cabecalho">
+    <div class="login-container">
+      <button id="login-button">Login</button>
+    </div>
   </header>
+
+  <div id="login-modal" class="modal hidden"></div>
+    <form id="login-form">
+        <h2>Login</h2>
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" required>
+        
+        <label for="login-password">Senha:</label>
+        <input type="password" id="login-password" required>
+        
+        <button type="submit">Entrar</button>
+        <p>Não tem uma conta? <a href="assinatura.html">Cadastre-se aqui.</a></p>
+    </form>
+</div>
       <div class="container">
         <form action="" id="form">
             <fieldset>

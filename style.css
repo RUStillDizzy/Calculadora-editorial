@@ -11,6 +11,72 @@ body, html {
   color: #000000;
 }
 
+/* Estilizando o botão de login no canto superior direito */
+.login-container {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+#login-button {
+  background-color: #c19643;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#login-button:hover {
+  background-color: #b58439;
+}
+
+/* Estilos do modal de login */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #c19643;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal h2 {
+  color: #c19643;
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #c19643;
+  border-radius: 5px;
+}
+
+.modal button {
+  background-color: #c19643;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal button:hover {
+  background-color: #b58439;
+}
+
+
 #cabecalho {
   width: 50px;
   height: 50px;
@@ -81,7 +147,7 @@ button:hover {
 }
 
 #botao {
-  width: 20%;
+  width: 30%;
   background-color: #c19643;
   color: white;
   font-weight: bold;

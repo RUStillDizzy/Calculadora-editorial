@@ -31,10 +31,18 @@ botao.addEventListener('click', (event) => {
 // Abrindo o modal de login quando o botão for clicado
 const loginButton = document.getElementById('login-button');
 const loginModal = document.getElementById('login-modal');
+const loginForm = document.getElementById('login-form');
+const loginEmail = document.getElementById('login-email');  // Campo de e-mail do login
+const loginPassword = document.getElementById('login-password');  // Campo de senha do login
+
 
 loginButton.addEventListener('click', () => {
     loginModal.classList.toggle('hidden');  // Alterna entre exibir e esconder o modal
+    loginForm.reset();  // Limpa os campos do formulário
+    loginEmail.value = '';  // Alternativa para garantir que o campo seja limpo
+    loginPassword.value = '';  // Alternativa para garantir que o campo seja limpo
 });
+
 
 // Simulação de login
 document.getElementById('login-form').addEventListener('submit', function(event) {
@@ -49,13 +57,18 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const usuarioEncontrado = usuarios.find(usuario => usuario.email === email && usuario.senha === password);
 
     if (usuarioEncontrado) {
-        alert('Login bem-sucedido!');
-        localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));  // Salva o usuário logado no localStorage
-        loginModal.classList.add('hidden');  // Fecha o modal de login
-        // Redireciona para a página do usuário
-        window.location.href = 'usuario.html';
-    } else {
-        alert('Email ou senha incorretos.');
-    }
+      alert('Login bem-sucedido!');
+      localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));  // Salva o usuário logado no localStorage
+      loginModal.classList.add('hidden');  // Fecha o modal de login
+      loginForm.reset();  // Limpa os campos do formulário de login após sucesso
+      loginEmail.value = '';  // Outra opção para garantir limpeza
+      loginPassword.value = '';  // Outra opção para garantir limpeza
+      window.location.href = 'usuario.html'; // Redireciona para a página do usuário
+  } else {
+      alert('Email ou senha incorretos.');
+      loginForm.reset();  // Limpa os campos após login falho
+      loginEmail.value = '';  // Alternativa de segurança para limpar
+      loginPassword.value = '';  // Alternativa de segurança para limpar
+  }
 });
 

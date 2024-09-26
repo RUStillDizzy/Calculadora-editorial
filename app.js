@@ -52,6 +52,8 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         alert('Login bem-sucedido!');
         localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));  // Salva o usuário logado no localStorage
         loginModal.classList.add('hidden');  // Fecha o modal de login
+        // Redireciona para a página do usuário
+        window.location.href = 'usuario.html';
     } else {
         alert('Email ou senha incorretos.');
     }

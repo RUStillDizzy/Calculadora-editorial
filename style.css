@@ -363,3 +363,9 @@ a button:hover {
 .chapter-sidebar li:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  form {
+    width: 90%; /* O formulário ocupará 90% da tela em dispositivos menores */
+    padding: 15px;
+  }

@@ -8,11 +8,12 @@ body, html {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Adicione flex-direction para controle vertical */
+  justify-content: flex-start; /* Alterado para começar no topo */
   align-items: center;
   background-color: #ffffff;
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
+  min-height: 100vh; /* Modificado de height para min-height */
   color: #000000;
 }
 
@@ -132,8 +133,9 @@ legend {
   margin-bottom: 20px;
 }
 
-input  {
-  width: 30%;
+input {
+  width: 90%; /* Aumenta o tamanho do input */
+  max-width: 400px; /* Define um limite máximo de largura */
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #c19643;
@@ -141,11 +143,12 @@ input  {
 }
 
 button {
-  width: 20%;
+  width: 100px; /* Ajuste de largura para tamanhos fixos */
   background-color: #c19643;
   color: white;
   font-weight: bold;
   cursor: pointer;
+  padding: 10px 15px; /* Melhor espaçamento */
 }
 
 button:hover {
@@ -153,7 +156,7 @@ button:hover {
 }
 
 #botao {
-  width: 30%;
+  width: 150px; /* Ajuste maior para o botão específico */
   background-color: #c19643;
   color: white;
   font-weight: bold;

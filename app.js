@@ -42,13 +42,13 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
     if (usuarioEncontrado) {
       Swal.fire('Login bem-sucedido!');
+
       localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));  // Salva o usuário logado no localStorage
       document.getElementById('login-form').reset();  // Limpa os campos após o login
       window.location.href = 'usuario.html'; // Redireciona para a página do usuário
   } else {
     Swal.fire('Email ou senha incorretos.');
 
-    
       document.getElementById('login-form').reset();  // Limpa os campos após login falho
   }
 });

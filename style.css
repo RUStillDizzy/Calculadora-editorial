@@ -115,15 +115,6 @@ img.cabecalho {
   height: 100px;
 }
 
-/* Ajuste do container principal */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  flex-direction: column;
-}
-
 /* Estilo do formulário */
 form {
   display: block;
@@ -137,6 +128,7 @@ form {
   width: 400px;
   max-width: 90%; /* Garante que o formulário se ajuste a telas menores */
 }
+
 
 fieldset {
   border: none;

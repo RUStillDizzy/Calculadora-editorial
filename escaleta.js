@@ -1,7 +1,18 @@
 document.getElementById('confirmar-estrutura').addEventListener('click', function() {
   const estruturaSelecionada = document.getElementById('estrutura-narrativa').value;
+  const nomeProjeto = prompt('Digite o nome do projeto:');
   const kanbanEscaleta = document.getElementById('kanban-escaleta');
   const passosEscaleta = [];
+
+  if (nomeProjeto) {
+    // Salvar o projeto no localStorage
+    let projetos = JSON.parse(localStorage.getItem('projetos')) || [];
+    projetos.push(nomeProjeto);
+    localStorage.setItem('projetos', JSON.stringify(projetos));
+
+    alert(`Projeto "${nomeProjeto}" criado com sucesso!`);
+  }
+}); //MARCADO APENAS O TRECHO DO CÓDIGO, REVISAR A FUNCIONALIDADE
 
   // Estruturas narrativas com seus títulos de colunas
   const estruturas = {
@@ -50,5 +61,4 @@ document.getElementById('confirmar-estrutura').addEventListener('click', functio
     });
   } else {
     alert('Por favor, selecione uma estrutura narrativa.');
-  }
-});
+  };

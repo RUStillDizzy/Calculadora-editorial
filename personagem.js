@@ -75,7 +75,7 @@ const rompimento = document.getElementById('rompimento').value;
 
 
   // Salva o personagem no localStorage
-  localStorage.setItem('personagem', JSON.stringify(personagem));
+  localStorage.setItem('personagens', JSON.stringify(personagens));
 
   // Limpa o formulário após o salvamento
   document.getElementById('personagem-form').reset();
@@ -99,16 +99,18 @@ function generatePersonagemList() {
     personagemList.innerHTML = '<li>Nenhum personagem salvo ainda.</li>';
   } else {
     personagens.forEach(function(personagem, index) {
-      const personagemItem = document.createElement('li');
-      personagemItem.textContent = personagem.nome; // Exibe o nome do personagem
-      personagemItem.setAttribute('data-index', index);
-
-      personagemList.appendChild(personagemItem);
-
-      // Exibe os detalhes do personagem ao clicar
-      personagemItem.addEventListener('click', function() {
+      // Cria um botão para cada personagem
+      const personagemButton = document.createElement('button');
+      personagemButton.textContent = personagem.nome;
+      personagemButton.setAttribute('data-index', index);
+      personagemButton.classList.add('personagem-button'); // Adiciona uma classe para estilização
+  
+      personagemList.appendChild(personagemButton);
+  
+      // Exibe detalhes ao clicar no botão
+      personagemButton.addEventListener('click', function() {
         alert(`Nome: ${personagem.nome}\nProjeto: ${personagem.projeto}\nIdade: ${personagem.idade}\nObjetivo: ${personagem.objetivo}`);
       });
     });
   }
-}
+  

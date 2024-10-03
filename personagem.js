@@ -9,6 +9,8 @@ window.onload = function() {
     option.textContent = projeto;
     selectProjeto.appendChild(option);
   });
+
+generatePersonagemList();
 };
 
 
@@ -80,3 +82,33 @@ const rompimento = document.getElementById('rompimento').value;
 
   alert('Personagem salvo com sucesso!');
 });
+
+// Atualiza a lista de personagens
+generatePersonagemList();
+
+
+// Função para carregar e exibir a lista de personagens salvos
+function generatePersonagemList() {
+  const personagemList = document.getElementById('personagem-items');
+  personagemList.innerHTML = '';  // Limpa a lista de personagens anterior
+
+  // Obtém os personagens do localStorage
+  const personagens = JSON.parse(localStorage.getItem('personagens')) || [];
+
+  if (personagens.length === 0) {
+    personagemList.innerHTML = '<li>Nenhum personagem salvo ainda.</li>';
+  } else {
+    personagens.forEach(function(personagem, index) {
+      const personagemItem = document.createElement('li');
+      personagemItem.textContent = personagem.nome; // Exibe o nome do personagem
+      personagemItem.setAttribute('data-index', index);
+
+      personagemList.appendChild(personagemItem);
+
+      // Exibe os detalhes do personagem ao clicar
+      personagemItem.addEventListener('click', function() {
+        alert(`Nome: ${personagem.nome}\nProjeto: ${personagem.projeto}\nIdade: ${personagem.idade}\nObjetivo: ${personagem.objetivo}`);
+      });
+    });
+  }
+}

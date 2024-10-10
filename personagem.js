@@ -39,6 +39,12 @@ const repudio = document.getElementById('repudio').value;
 const moral = document.getElementById('moral').value;
 const rompimento = document.getElementById('rompimento').value;
 
+// Verifica se os campos obrigatórios estão preenchidos
+if (!nome || !detalhe || !objetivo || !arco) {
+  alert('Por favor, preencha todos os campos obrigatórios: nome, detalhe, objetivo e arco.');
+  return; // Interrompe o envio do formulário
+}
+
   // Seleciona o projeto
   const projetoSelecionado = document.getElementById('projeto').value;
 
@@ -67,6 +73,7 @@ const rompimento = document.getElementById('rompimento').value;
     projeto: projetoSelecionado // Adiciona o projeto ao personagem
   };
 
+  document.getElementById('save-button').addEventListener('click', function() {
   // Obtém o array de personagens salvos no localStorage (ou um array vazio se não houver personagens)
   let personagens = JSON.parse(localStorage.getItem('personagens')) || [];
   
@@ -114,3 +121,41 @@ function generatePersonagemList() {
     });
   }
 }
+})
+
+document.getElementById('personagem-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = {
+      nome: document.getElementById('nome').value,
+      idade: document.getElementById('idade').value,
+      detalhe: document.getElementById('detalhe').value,
+      objetivo: document.getElementById('objetivo').value,
+      arco: document.getElementById('arco').value,
+      olhos: document.getElementById('olhos').value,
+      cabelo: document.getElementById('cabelo').value,
+      corpo: document.getElementById('corpo').value,
+      acessorio: document.getElementById('acessorio').value,
+      estilo: document.getElementById('estilo').value,
+      defeito: document.getElementById('defeito').value,
+      qualidade: document.getElementById('qualidade').value,
+      motiva: document.getElementById('motiva').value,
+      medo: document.getElementById('medo').value,
+      gerais: document.getElementById('gerais').value,
+      origem: document.getElementById('origem').value,
+      admira: document.getElementById('admira').value,
+      repudio: document.getElementById('repudio').value,
+      moral: document.getElementById('moral').value,
+      rompimento: document.getElementById('rompimento').value
+  };
+
+  const response = await fetch('/salvar-ficha', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+  });
+
+  const result = await response.text();
+  alert(result);
+});

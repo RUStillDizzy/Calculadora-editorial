@@ -1,3 +1,7 @@
+const conexao = require('./conexao');
+
+// Aqui você pode adicionar consultas para testar a conexão
+
 const campoCce = document.getElementById('campoCce');
 const campoLauda = document.getElementById('campoLauda');
 const campoTamanhoLauda = document.getElementById('campoTamanhoLauda');  // Tamanho da lauda (ex.: 2100, 2000 ou 2200)

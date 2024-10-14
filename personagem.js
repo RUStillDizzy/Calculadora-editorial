@@ -1,18 +1,3 @@
-window.onload = function() {
-  // Carrega os projetos disponíveis no select
-  const selectProjeto = document.getElementById('projeto');
-  let projetos = JSON.parse(localStorage.getItem('projetos')) || [];
-  
-  projetos.forEach(projeto => {
-    const option = document.createElement('option');
-    option.value = projeto;
-    option.textContent = projeto;
-    selectProjeto.appendChild(option);
-  });
-
-  generatePersonagemList();
-};
-
 function generatePersonagemList() {
   const personagemList = document.getElementById('personagem-items');
   personagemList.innerHTML = '';  // Limpa a lista de personagens anterior
@@ -39,6 +24,22 @@ function generatePersonagemList() {
     });
   }
 }
+
+window.onload = function() {
+  // Carrega os projetos disponíveis no select
+  const selectProjeto = document.getElementById('projeto');
+  let projetos = JSON.parse(localStorage.getItem('projetos')) || [];
+  
+  projetos.forEach(projeto => {
+    const option = document.createElement('option');
+    option.value = projeto;
+    option.textContent = projeto;
+    selectProjeto.appendChild(option);
+  });
+
+  generatePersonagemList();
+};
+
 
 document.getElementById('personagem-form').addEventListener('submit', function(event) {
   event.preventDefault(); // Impede o envio do formulário

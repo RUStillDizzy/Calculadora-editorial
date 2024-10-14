@@ -138,7 +138,7 @@ document.getElementById('personagem-form').addEventListener('submit', async (e) 
       rompimento: document.getElementById('rompimento').value
   };
 
-  const response = await fetch('/salvar-ficha', {
+  const response = await fetch('/salvar-personagem', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',

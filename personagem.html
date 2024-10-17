@@ -9,7 +9,7 @@
 <body>
   <h1>Preencher Ficha de Personagem</h1>
 
-  <form id="personagem-form" action="/salvar-personagem" method="POST">
+  <form id="personagem-form">
     <h2>Perfil Básico</h2>
     <label for="nome">Nome do Personagem:</label>
     <input type="text" id="nome" name= nome placeholder="Nome" required><br><br>
@@ -21,40 +21,43 @@
     <input type="text" id="objetivo" name= objetivo placeholder="Ex.: Destruir a ponte e salvar o mundo" required><br><br>
     <label for="arco">Arco do Personagem:</label>
     <input type="text" id="arco" name= arco placeholder="Descreva de forma resumida o arco do personagem" required><br><br>
+    
     <h2>Características Externas</h2>
-    <label for="olhos">Olhos:</label>
-    <input type="text" id="olhos" name= olhos placeholder="Ex.: Castanho e formato amendoado" required><br><br>
-    <label for="cabelo">Cabelo:</label>
-    <input type="text" id="cabelo" name= cabelo placeholder="Ex.: Comprido, castanho, cacheado" required><br><br>
-    <label for="corpo">Estrutura do corpo:</label>
-    <input type="text" id="corpo" name= corpo placeholder="Ex.: Esguio e comprido" required><br><br>
-    <label for="acessorio">Acessórios:</label>
-    <input type="text" id="acessorio" name= acessorio placeholder="Ex.: óculos, adaga e cantil" required><br><br>
-    <label for="estilo">Estilo:</label>
-    <input type="text" id="estilo" name= estilo placeholder="Ex.: Terno e cartola" required><br><br>
+      <label for="olhos">Olhos:</label>
+      <input type="text" id="olhos" name= olhos placeholder="Ex.: Castanho e formato amendoado"><br><br>
+      <label for="cabelo">Cabelo:</label>
+      <input type="text" id="cabelo" name= cabelo placeholder="Ex.: Comprido, castanho, cacheado"><br><br>
+      <label for="corpo">Estrutura do corpo:</label>
+      <input type="text" id="corpo" name= corpo placeholder="Ex.: Esguio e comprido"><br><br>
+      <label for="acessorio">Acessórios:</label>
+      <input type="text" id="acessorio" name= acessorio placeholder="Ex.: óculos, adaga e cantil"><br><br>
+      <label for="estilo">Estilo:</label>
+      <input type="text" id="estilo" name= estilo placeholder="Ex.: Terno e cartola"><br><br>
+      
     <h2>Características Internas</h2>
-    <label for="defeito">Os 3 maiores defeitos:</label>
-    <input type="text" id="defeito" name= defeito placeholder="Ex.: Pessimista, manipulador e preguiçoso" required><br><br>
-    <label for="qualidade">As 3 maiores qualidades:</label>
-    <input type="text" id="qualidade" name= qualidade placeholder="Ex.: Esperto, inteligente e pontual" required><br><br>
-    <label for="motiva">O que motiva o seu personagem?</label>
-    <input type="text" id="motiva" name= motiva placeholder="Descreva o que motiva o seu personagem a perseguir seus objetivos" required><br><br>
-    <label for="medo">Qual o maior medo do seu personagem?</label>
-    <input type="text" id="medo" name= medo placeholder="Ex.: Zumbis; fim do mundo, etc." required><br><br>
-    <label for="gerais">Informações extras:</label>
-    <input type="text" id="gerais" name= gerais placeholder="Acrescente novas informações" required><br><br>
+      <label for="defeito">Os 3 maiores defeitos:</label>
+      <input type="text" id="defeito" name= defeito placeholder="Ex.: Pessimista, manipulador e preguiçoso"><br><br>
+      <label for="qualidade">As 3 maiores qualidades:</label>
+      <input type="text" id="qualidade" name= qualidade placeholder="Ex.: Esperto, inteligente e pontual"><br><br>
+      <label for="motiva">O que motiva o seu personagem?</label>
+      <input type="text" id="motiva" name= motiva placeholder="Descreva o que motiva o seu personagem a perseguir seus objetivos"><br><br>
+      <label for="medo">Qual o maior medo do seu personagem?</label>
+      <input type="text" id="medo" name= medo placeholder="Ex.: Zumbis; fim do mundo, etc."><br><br>
+      <label for="gerais">Informações extras:</label>
+      <input type="text" id="gerais" name= gerais placeholder="Acrescente novas informações"><br><br>
+      
     <h2>Caráter</h2>
-    <label for="origem">Histórico familiar:</label>
-    <input type="text" id="origem" name= origem placeholder="Descreva a origem familiar do seu personagem" required><br><br>
-    <label for="admira">Em que o seu personagem acredita?</label>
-    <input type="text" id="admira" name= admira placeholder="Descreva aspectos políticos, religiosos e sociais." required><br><br>
-    <label for="repudio">O que o seu personagem repudia?</label>
-    <input type="text" id="repudio" name= repudio placeholder="Descreva aspectos políticos, religiosos e sociais" required><br><br>
-    <label for="moral">Qual é a visão moral do seu personagem?</label>
-    <input type="text" id="moral" name= moral placeholder="Descreva sua visão moral" required><br><br>
-    <label for="rompimento">Em que momento ele romperia com sua visão moral?</label>
-    <input type="text" id="rompimento" name= rompimento placeholder="Descreva as situações em que ele seria incoerente" required><br><br>
-    <label for="projeto">Projeto:</label>
+      <label for="origem">Histórico familiar:</label>
+      <input type="text" id="origem" name= origem placeholder="Descreva a origem familiar do seu personagem"><br><br>
+      <label for="admira">Em que o seu personagem acredita?</label>
+      <input type="text" id="admira" name= admira placeholder="Descreva aspectos políticos, religiosos e sociais."><br><br>
+      <label for="repudio">O que o seu personagem repudia?</label>
+      <input type="text" id="repudio" name= repudio placeholder="Descreva aspectos políticos, religiosos e sociais"><br><br>
+      <label for="moral">Qual é a visão moral do seu personagem?</label>
+      <input type="text" id="moral" name= moral placeholder="Descreva sua visão moral"><br><br>
+      <label for="rompimento">Em que momento ele romperia com sua visão moral?</label>
+      <input type="text" id="rompimento" name= rompimento placeholder="Descreva as situações em que ele seria incoerente"><br><br>
+      <label for="projeto">Projeto:</label>
     <select id="projeto">
       <option value="">Selecione um projeto</option>
       <!-- Projetos devem ser carregados dinamicamente -->

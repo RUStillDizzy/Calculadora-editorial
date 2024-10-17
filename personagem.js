@@ -65,7 +65,7 @@ document.getElementById('personagem-form').addEventListener('submit', async func
 
   // Envia para o servidor via fetch
   try {
-    const response = await fetch('/salvar-personagem', {
+    const response = await fetch('http://localhost:3000/salvar-personagem', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
